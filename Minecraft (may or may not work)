@@ -1,0 +1,14 @@
+import { world, ItemStack, MinecraftItemTypes } from "@minecraft/server";
+
+// Listen for a player joining the world
+world.events.playerJoin.subscribe((eventData) => {
+    const player = eventData.player;
+
+    // Create a diamond sword item
+    const diamondSword = new ItemStack(MinecraftItemTypes.diamondSword, 1);
+
+    // Give it to the player
+    player.getComponent("inventory").container.addItem(diamondSword);
+
+    player.runCommandAsync("say You received a diamond sword!");
+});
