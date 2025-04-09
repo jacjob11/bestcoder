@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Clicker Game</title>
+  <title>Clicker Game with Upgrades</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -35,22 +35,70 @@
     #clickButton:hover {
       background-color: #45a049;
     }
+    #upgrades {
+      margin-top: 20px;
+    }
+    .upgrade {
+      margin: 10px 0;
+    }
+    .upgrade button {
+      font-size: 1rem;
+      padding: 5px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .upgrade button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
   <div id="game">
     <div id="score">Score: 0</div>
     <button id="clickButton">Click Me!</button>
+    <div id="upgrades">
+      <div class="upgrade">
+        <button id="upgrade1">Upgrade 1 (+1 per click) - Cost: 50</button>
+      </div>
+      <div class="upgrade">
+        <button id="upgrade2">Upgrade 2 (+5 per click) - Cost: 200</button>
+      </div>
+    </div>
   </div>
 
   <script>
     let score = 0;
+    let pointsPerClick = 1;
+
     const scoreDisplay = document.getElementById('score');
     const clickButton = document.getElementById('clickButton');
+    const upgrade1Button = document.getElementById('upgrade1');
+    const upgrade2Button = document.getElementById('upgrade2');
 
     clickButton.addEventListener('click', () => {
-      score++;
+      score += pointsPerClick;
       scoreDisplay.textContent = `Score: ${score}`;
+    });
+
+    upgrade1Button.addEventListener('click', () => {
+      if (score >= 50) {
+        score -= 50;
+        pointsPerClick += 1;
+        scoreDisplay.textContent = `Score: ${score}`;
+        upgrade1Button.disabled = true; // Disable the button after purchase
+      }
+    });
+
+    upgrade2Button.addEventListener('click', () => {
+      if (score >= 200) {
+        score -= 200;
+        pointsPerClick += 5;
+        scoreDisplay.textContent = `Score: ${score}`;
+        upgrade2Button.disabled = true; // Disable the button after purchase
+      }
     });
   </script>
 </body>
