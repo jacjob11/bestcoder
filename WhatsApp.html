@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WhatsApp Chat UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ece5dd;
+      margin: 0;
+      padding: 0;
+    }
+
+    .chat-container {
+      max-width: 500px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .message {
+      padding: 10px 15px;
+      margin: 10px;
+      border-radius: 8px;
+      max-width: 70%;
+      word-wrap: break-word;
+    }
+
+    .message.sent {
+      background-color: #dcf8c6;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+
+    .message.received {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      align-self: flex-start;
+      margin-right: auto;
+    }
+
+    .chat-box {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .input-area {
+      display: flex;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-top: 1px solid #ccc;
+    }
+
+    .input-area input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    .input-area button {
+      padding: 10px 15px;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .input-area button:hover {
+      background-color: #1ebd5f;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-box">
+    <div class="message received">Hey! How are you?</div>
+    <div class="message sent">I’m good, thanks! What about you?</div>
+    <div class="message received">Doing great! Wanna catch up later?</div>
+    <div class="message sent">Sure, let’s do it 😊</div>
+  </div>
+  <div class="input-area">
+    <input type="text" placeholder="Type a message...">
+    <button>Send</button>
+  </div>
+</div>
+
+</body>
+</html>
