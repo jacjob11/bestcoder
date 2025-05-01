@@ -1,6 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <body>
-    <a href="https://thomasd12111211.github.io/chat.html">live chat</a>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>WhatsApp Chat UI</title>
+  <style>
+    body {
+      background-color: #e5ddd5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .chat-wrapper {
+      width: 400px;
+      max-width: 100%;
+      margin: 40px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .chat-header {
+      background-color: #075e54;
+      color: white;
+      padding: 10px 15px;
+      font-size: 18px;
+    }
+
+    .chat-body {
+      padding: 15px;
+      height: 400px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: url('https://i.imgur.com/2j0C7qf.png') repeat;
+      background-size: cover;
+    }
+
+    .message {
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 8px;
+      line-height: 1.4;
+      position: relative;
+      font-size: 14px;
+    }
+
+    .message.sent {
+      background-color: #dcf8c6;
+      align-self: flex-end;
+      border-bottom-right-radius: 0;
+    }
+
+    .message.received {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      align-self: flex-start;
+      border-bottom-left-radius: 0;
+    }
+
+    .chat-footer {
+      display: flex;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-footer input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .chat-footer button {
+      padding: 10px 15px;
+      margin-left: 10px;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-wrapper">
+  <div class="chat-header">John Doe</div>
+
+  <div class="chat-body">
+    <div class="message received">Hey there!</div>
+    <div class="message sent">Hi! How are you?</div>
+    <div class="message received">I'm doing great. What about you?</div>
+    <div class="message sent">All good! Just working on a project.</div>
+    <div class="message received">Nice! Let me know if you need help 😊</div>
+  </div>
+
+  <div class="chat-footer">
+    <input type="text" placeholder="Type a message..." disabled>
+    <button>&#9658;</button>
+  </div>
+</div>
+
+</body>
 </html>
